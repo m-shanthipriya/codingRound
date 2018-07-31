@@ -3,9 +3,10 @@ from selenium import webdriver
 
 driver = webdriver.Chrome()
 driver.maximize_window()
+SITE_URL="https://www.cleartrip.com/"
 
 def signInSuccess():
-    driver.get ("https://www.cleartrip.com/")
+    driver.get (SITE_URL)
     time.sleep(10)
     driver.find_element_by_id("userAccountLink").click()
     driver.find_element_by_id("SignIn").click()
@@ -18,7 +19,7 @@ def signInSuccess():
 signInSuccess()
 
 def signInFailureWithoutGivingCredential():
-    driver.get ("https://www.cleartrip.com/")
+    driver.get (SITE_URL)
     time.sleep(10)
     driver.find_element_by_id("userAccountLink").click()
     driver.find_element_by_id("SignIn").click()
