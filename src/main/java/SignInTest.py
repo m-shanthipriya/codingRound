@@ -4,7 +4,7 @@ from selenium import webdriver
 driver = webdriver.Chrome()
 driver.maximize_window()
 
-def sign_in_success():
+def signInSuccess():
     driver.get ("https://www.cleartrip.com/")
     time.sleep(10)
     driver.find_element_by_id("userAccountLink").click()
@@ -15,9 +15,9 @@ def sign_in_success():
     driver.find_element_by_id("password").send_keys("password")
     driver.find_element_by_id("signInButton").click()
     driver.close()
-sign_in_success()
+signInSuccess()
 
-def sign_in_failure_without_giving_credential():
+def signInFailureWithoutGivingCredential():
     driver.get ("https://www.cleartrip.com/")
     time.sleep(10)
     driver.find_element_by_id("userAccountLink").click()
@@ -27,4 +27,4 @@ def sign_in_failure_without_giving_credential():
     driver.find_element_by_id("signInButton").click()
     assert "There were errors in your submission" in driver.page_source
     driver.close()
-sign_in_failure_without_giving_credential()
+signInFailureWithoutGivingCredential()
