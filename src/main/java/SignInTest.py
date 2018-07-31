@@ -16,7 +16,6 @@ def signInSuccess():
     driver.find_element_by_id("password").send_keys("password")
     driver.find_element_by_id("signInButton").click()
     driver.close()
-signInSuccess()
 
 def signInFailureWithoutGivingCredential():
     driver.get (SITE_URL)
@@ -28,4 +27,6 @@ def signInFailureWithoutGivingCredential():
     driver.find_element_by_id("signInButton").click()
     assert "There were errors in your submission" in driver.page_source
     driver.close()
+    
+signInSuccess()
 signInFailureWithoutGivingCredential()
